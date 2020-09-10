@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Smarttek Bilişim</title>
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/SiteDosyalar/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/summernote/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/SiteDosyalar/css/indexTable.css" rel="stylesheet" />
+
+
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="row">
+        <div class="col-3">
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <div class="sidebar">
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="~/SiteDosyalar/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <!--<a href="#" class="d-block">//(user.Adi + " " + user.Soyadi)</a> -->
+                        </div>
+                    </div>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="/Home/Index" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Firmalar
+                                        <i class="right fas fa-angle-left"></i>
+
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="/Home/Temaslar" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Temaslar
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Azure Temaslar
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="/Home/Gorevler" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Görevler
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Personeller
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        İzin Talebi Oluştur
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Raporlar
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Satılan Ürünler
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Fatura Hatırlat
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Alınan Ürünler
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Stok Yönetimi
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+
+                                        Ayarlar
+                                        <i class="right fas fa-angle-left"></i>
+
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
+    </div>
+    
+   
+
+
+    <!-- jQuery -->
+    <script src="~/SiteDosyalar/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/SiteDosyalar/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <!-- AdminLTE App -->
+    <script src="~/SiteDosyalar/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/SiteDosyalar/js/demo.js"></script>
+    <script src="~/SiteDosyalar/js/table/table1.js"></script>
+    <script src="~/SiteDosyalar/js/table/table2.js"></script>
+    <!-- page script -->
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "columns": [
+                    { "data": "name" },
+                    { "data": "position" },
+                    { "data": "office" },
+                    { "data": "age" },
+                    { "data": "age1" },
+                    { "data": "start_date" }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
