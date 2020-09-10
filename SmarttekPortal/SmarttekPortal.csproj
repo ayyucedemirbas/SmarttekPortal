@@ -3578,7 +3578,9 @@
     <Content Include="SiteDosyalar\plugins\toastr\toastr.css" />
     <Content Include="SiteDosyalar\plugins\toastr\toastr.min.css" />
     <Content Include="SiteDosyalar\plugins\toastr\toastr.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_Temaslar.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -3701,7 +3703,7 @@
     <Content Include="SiteDosyalar\Views\Web.config" />
     <Content Include="SiteDosyalar\Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Gorevler.cshtml" />
-    <Content Include="Views\Shared\Gorevler.cshtml" />
+    <Content Include="Views\Shared\_Gorevler.cshtml" />
     <Content Include="Views\Home\ModalPopUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

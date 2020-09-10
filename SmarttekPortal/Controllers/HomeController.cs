@@ -10,6 +10,9 @@ namespace SmarttekPortal.Controllers
 {
     public class HomeController : Controller
     {
+
+        //Temaslar tms = new Temaslar();
+
         public ActionResult Temaslar() //giris kontrolu sagla
         {
             if (giris())
@@ -21,11 +24,11 @@ namespace SmarttekPortal.Controllers
         }
         public ActionResult Gorevler()
         {
-           // if (giris())
+            if (giris())
             {
                 return View();
             }
-           // return null;
+            return null;
         }
 
 
@@ -122,46 +125,7 @@ namespace SmarttekPortal.Controllers
         }
 
 
-        public ActionResult IndexGorevler(string gorevID)
-        {
-            if (giris())
-            {
-                //if (gorevID != null)
-               // {
-
-                    //ViewBag.YetkiliCombo
-                    Manager mng = new Manager();
-                    //if (mng.gorevKontrol(gorevID))
-                    {
-                        ViewBag.GorevList = mng.GorevList();
-                        TempData["ID"] = gorevID;
-
-                        List<SelectListItem> items = new List<SelectListItem>();
-
-                        ViewBag.YetkiliCombo = items;
-                        return View();
-                    }
-                   // else
-                   // {
-                     //   return RedirectToAction("Index", "Home");
-                   // }
-                //}
-                /*else
-                {
-                    TempData["GorevID"] = "0";
-                    
-                    Manager mng = new Manager();
-                    ViewBag.GorevList = mng.GorevList();
-
-                }*/
-               // return View();
-            }
-            else
-            {
-                return RedirectToAction("Index", "Giris");
-            }
-
-        }
+       
 
 
 
@@ -243,15 +207,15 @@ namespace SmarttekPortal.Controllers
         }
 
 
-
-        public ActionResult IndexTemas(Temas t)
+        [HttpPost]
+        public ActionResult IndexTemas(Temaslar t)
         {
             string hataMesaj = "";
             if (giris())
             {
-                t.TemasOlusturan = user.Adi + " " + user.Soyadi;
-                t.AcmaNedeni ="acmanedeni";
-                t.TemasTarih = DateTime.Now;
+                t.temas_olusturan = user.Adi + " " + user.Soyadi;
+                //t.AcmaNedeni ="acmanedeni";
+                t.temas_tarih = "ben de bilmiyom ki";
                 
                 Manager mng = new Manager();
                 if (t != null)
@@ -268,7 +232,7 @@ namespace SmarttekPortal.Controllers
                     }
                 }
                 ViewBag.addError = hataMesaj;
-                return View();
+                return RedirectToAction("Temaslar");
             }
             else
             {
@@ -280,7 +244,38 @@ namespace SmarttekPortal.Controllers
 
 
 
+        [HttpPost]
+        public ActionResult IndexGorev(Gorevler g)
+        {
+            string hataMesaj = "";
+            if (giris())
+            {
+               
+                //t.AcmaNedeni ="acmanedeni";
+               // g.temas_tarih = "ben de bilmiyom ki";
 
+                Manager mng = new Manager();
+                if (g != null)
+                {
+                    AciklamaDurum();
+                    int ekle = mng.gorevEkle(g);
+                    if (ekle > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        hataMesaj += "Gorev Eklenmedi <br>";
+                    }
+                }
+                ViewBag.addError = hataMesaj;
+                return RedirectToAction("Gorevler");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Giris");
+            }
+        }
 
 
 

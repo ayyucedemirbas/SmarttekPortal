@@ -62,18 +62,35 @@ namespace Busines
             }
 
         }
-        public int temasEkle(Temas data)
+        public int temasEkle(Temaslar data)
         {
-            BusinesLayerResult<Temas> layerResult = new BusinesLayerResult<Temas>();
+            /*BusinesLayerResult<Temas> layerResult = new BusinesLayerResult<Temas>();
             layerResult.result = repo_Temas.Find(x => x.SiparisNumara == data.SiparisNumara);
             if (layerResult.result == null)
             {
-                return repo_Temas.Insert(data);
+                
             }
             else
             {
                 return -1;
+            }*/
+            return repo_category.Insert(data);
+
+        }
+
+        public int gorevEkle(Gorevler data)
+        {
+            /*BusinesLayerResult<Temas> layerResult = new BusinesLayerResult<Temas>();
+            layerResult.result = repo_Temas.Find(x => x.SiparisNumara == data.SiparisNumara);
+            if (layerResult.result == null)
+            {
+                
             }
+            else
+            {
+                return -1;
+            }*/
+            return repo_gorev.Insert(data);
 
         }
         public int firmaAciklamaEkle(Firma firma, FirmaAciklama data, FirmaYetkili yetkili)
