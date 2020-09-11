@@ -3705,6 +3705,8 @@
     <Content Include="Views\Home\Gorevler.cshtml" />
     <Content Include="Views\Shared\_Gorevler.cshtml" />
     <Content Include="Views\Home\ModalPopUp.cshtml" />
+    <Content Include="Views\Home\Personeller.cshtml" />
+    <Content Include="Views\Shared\_Personeller.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -30,6 +30,14 @@ namespace SmarttekPortal.Controllers
             }
             return null;
         }
+        public ActionResult Personeller()
+        {
+            if (giris())
+            {
+                return View();
+            }
+            return null;
+        }
 
 
         /* public string Temaslar()
@@ -270,6 +278,38 @@ namespace SmarttekPortal.Controllers
                 }
                 ViewBag.addError = hataMesaj;
                 return RedirectToAction("Gorevler");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Giris");
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult IndexPersonel(Personel p)
+        {
+            string hataMesaj = "";
+            if (giris())
+            {
+
+
+                Manager mng = new Manager();
+                if (p != null)
+                {
+                    AciklamaDurum();
+                    int ekle = mng.personelEkle(p);
+                    if (ekle > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        hataMesaj += "Personel Eklenmedi <br>";
+                    }
+                }
+                ViewBag.addError = hataMesaj;
+                return RedirectToAction("Personel");
             }
             else
             {

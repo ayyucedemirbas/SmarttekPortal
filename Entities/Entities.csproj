@@ -59,6 +59,8 @@
     <Compile Include="Messasages\ErrorMesasagesObject.cs" />
     <Compile Include="Messasages\ErrosMesasagesCode.cs" />
     <Compile Include="MyEntitiesBase.cs" />
+    <Compile Include="Personel.cs" />
+    <Compile Include="Personeller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Temas.cs" />
     <Compile Include="Temaslar.cs" />

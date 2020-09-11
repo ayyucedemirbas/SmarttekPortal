@@ -15,6 +15,7 @@ namespace Busines
         Repository<User> repo_User = new Repository<User>();
         Repository<Firma> repo_Firma = new Repository<Firma>();
         Repository<Temas> repo_Temas = new Repository<Temas>();
+        Repository<Personel> repo_Personel = new Repository<Personel>();
 
         Repository<FirmaAciklama> repo_FirmaAciklama = new Repository<FirmaAciklama>();
 
@@ -22,6 +23,7 @@ namespace Busines
         Repository<FirmaYetkili> repo_FirmaYetkili = new Repository<FirmaYetkili>();
         private Repository<Temaslar> repo_category = new Repository<Temaslar>();
         private Repository<Gorevler> repo_gorev = new Repository<Gorevler>();
+        Repository<Personeller> repo_personel = new Repository<Personeller>();
 
         public List<Temaslar> GetCategories()
         {
@@ -35,6 +37,11 @@ namespace Busines
         public List<Firma> GetFirmalar()
         {
             return repo_Firma.List();
+        }
+
+        public List<Personeller> GetPersoneller()
+        {
+            return repo_personel.List();
         }
 
         public BusinesLayerResult<User> Login(string mail, string sifre)
@@ -62,6 +69,19 @@ namespace Busines
             }
 
         }
+
+        public int personelEkle(Personel data)
+        {
+           
+            
+                return repo_Personel.Insert(data);
+            
+           
+
+        }
+
+
+
         public int temasEkle(Temaslar data)
         {
             /*BusinesLayerResult<Temas> layerResult = new BusinesLayerResult<Temas>();
@@ -135,6 +155,11 @@ namespace Busines
         {
             return repo_Firma.List();
         }
+
+        public List<Personel> PersonelList()
+        {
+            return repo_Personel.List();
+        }
         public List<FirmaAciklama> firmaAciklamaList(Int64 firmaID)
         {
             return repo_FirmaAciklama.List(x => x.firmaID == firmaID);
@@ -143,8 +168,7 @@ namespace Busines
         {
             return repo_FirmaYetkili.List(x => x.firmaID == firmaID);
         }
-        public bool firmaKontrol(Int64 firmaID) /*Eski Yazilimcidan Oneri: 64 bit fazla bence, 
-            64bit olana kadar kayitlar silinir zaten ulasmaz 64bite, RAM'i bosuna isgal etmeye gerek yok*/
+        public bool firmaKontrol(Int64 firmaID) 
         {
             BusinesLayerResult<Firma> layerResult = new BusinesLayerResult<Firma>();
             layerResult.result = repo_Firma.Find(x => x.ID == firmaID);
