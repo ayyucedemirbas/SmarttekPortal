@@ -39,6 +39,15 @@ namespace SmarttekPortal.Controllers
             return null;
         }
 
+        public ActionResult Izinler()
+        {
+            if (giris())
+            {
+                return View();
+            }
+            return null;
+        }
+
 
         /* public string Temaslar()
          {
@@ -310,6 +319,37 @@ namespace SmarttekPortal.Controllers
                 }
                 ViewBag.addError = hataMesaj;
                 return RedirectToAction("Personel");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Giris");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult IndexIzin(Izin i)
+        {
+            string hataMesaj = "";
+            if (giris())
+            {
+
+
+                Manager mng = new Manager();
+                if (i != null)
+                {
+                    AciklamaDurum();
+                    int ekle = mng.izinOlustur(i);
+                    if (ekle > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        hataMesaj += "İzin oluşturma başarısız <br>";
+                    }
+                }
+                ViewBag.addError = hataMesaj;
+                return RedirectToAction("Izin");
             }
             else
             {

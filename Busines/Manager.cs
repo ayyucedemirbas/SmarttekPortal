@@ -16,6 +16,7 @@ namespace Busines
         Repository<Firma> repo_Firma = new Repository<Firma>();
         Repository<Temas> repo_Temas = new Repository<Temas>();
         Repository<Personel> repo_Personel = new Repository<Personel>();
+        Repository<Izin> repo_Izin = new Repository<Izin>();
 
         Repository<FirmaAciklama> repo_FirmaAciklama = new Repository<FirmaAciklama>();
 
@@ -24,6 +25,7 @@ namespace Busines
         private Repository<Temaslar> repo_category = new Repository<Temaslar>();
         private Repository<Gorevler> repo_gorev = new Repository<Gorevler>();
         Repository<Personeller> repo_personel = new Repository<Personeller>();
+        Repository<Izinler> repo_izin = new Repository<Izinler>();
 
         public List<Temaslar> GetCategories()
         {
@@ -42,6 +44,11 @@ namespace Busines
         public List<Personeller> GetPersoneller()
         {
             return repo_personel.List();
+        }
+
+        public List<Izinler> GetIzinler()
+        {
+            return repo_izin.List();
         }
 
         public BusinesLayerResult<User> Login(string mail, string sifre)
@@ -77,6 +84,16 @@ namespace Busines
                 return repo_Personel.Insert(data);
             
            
+
+        }
+
+        public int izinOlustur(Izin data)
+        {
+
+
+            return repo_Izin.Insert(data);
+
+
 
         }
 

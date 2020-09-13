@@ -56,6 +56,8 @@
     <Compile Include="FirmaYetkili.cs" />
     <Compile Include="Gorev.cs" />
     <Compile Include="Gorevler.cs" />
+    <Compile Include="Izin.cs" />
+    <Compile Include="Izinler.cs" />
     <Compile Include="Messasages\ErrorMesasagesObject.cs" />
     <Compile Include="Messasages\ErrosMesasagesCode.cs" />
     <Compile Include="MyEntitiesBase.cs" />
