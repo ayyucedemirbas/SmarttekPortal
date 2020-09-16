@@ -1,0 +1,571 @@
+﻿@using TabloBilgiler
+@{
+    ViewBag.Title = "Anasayfa";
+    List<FirmaAciklama> ListAciklama = TempData["aciklama"] as List<FirmaAciklama>;
+    List<FirmaYetkili> ListYetkili = TempData["yetkili"] as List<FirmaYetkili>;
+    Users user = Session["Login"] as Users;
+    if (TempData["FirmaID"] == null)
+    {
+        TempData["FirmaID"] = "0";
+    }
+
+}
+<div class="wrapper">
+    <!-- Navbar
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index3.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Contact</a>
+        </li>
+    </ul>
+        <!-- menüÜstSağ
+    </nav>-->
+    <!-- /.navbar -->
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <div class="sidebar">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="~/SiteDosyalar/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">@(user.Adi+" "+user.Soyadi)</a>
+                </div>
+            </div>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Firmalar
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Firmalar</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="Home/Cikis">Cıkış Yap</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Firmalar</h3>
+                            <button type="button" class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#FirmaEkleEkran">Yeni Firma Ekle</button>
+                            @{
+                                if (ViewBag.add != null)
+                                {
+                                    <div class="alert alert-success alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <h5><i class="icon fas fa-check"></i> @ViewBag.add</h5>
+                                    </div>
+                                }
+                                if (ViewBag.addError != null)
+                                {
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <h5><i class="icon fas fa-check"></i> @ViewBag.addError</h5>
+                                    </div>
+                                }
+                            }
+                        </div>
+
+
+                        <div class="card-body">
+                            <table id="example" class="display" >
+                                <thead>
+                                    <tr>
+                                        <th>Firma Adı</th>
+                                        <th>Firma Telefon</th>
+                                        <th>Firma Web Site</th>
+                                        <th>Firma Adres</th>
+                                        <th>Firma Mail</th>
+                                        <th>Kayıt Acan </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @{
+                                        if (ViewBag.FirmaList != null)
+                                        {
+                                            foreach (Firma item in ViewBag.FirmaList)
+                                            {
+                                                if (Int64.Parse(TempData["FirmaID"].ToString()) == item.ID)
+                                                {
+                                                    <tr style=" background-color: #99CCCC;cursor: pointer;" onclick="document.location='Home/FirmaDetay?firmaID='+@(item.ID)">
+                                                        <!-- style=" background-color: #99CCCC;cursor: pointer;" onclick="document.location='Home/FirmaDetay?firmaID='+@(item.ID)"-->
+                                                        <td>@(item.FirmaAdi)</td>
+                                                        <td>@(item.FirmaTelefon)</td>
+                                                        <td>@(item.FirmaWebSite)</td>
+                                                        <td>@(item.FirmaAdres)</td>
+                                                        <td>@(item.FirmaMail)</td>
+                                                        <td>@(item.KayitAcan)</td>
+                                                    </tr>
+                                                }
+                                                else
+                                                {
+                                                    <tr style="cursor: pointer;" onclick="document.location='Home/FirmaDetay?firmaID='+@(item.ID)">
+                                                        <!-- style="cursor: pointer;" onclick="document.location='Home/FirmaDetay?firmaID='+@(item.ID)"-->
+                                                        <td>@(item.FirmaAdi)</td>
+                                                        <td>@(item.FirmaTelefon)</td>
+                                                        <td>@(item.FirmaWebSite)</td>
+                                                        <td>@(item.FirmaAdres)</td>
+                                                        <td>@(item.FirmaMail)</td>
+                                                        <td>@(item.KayitAcan)</td>
+                                                    </tr>
+                                                }
+
+                                            }
+                                        }
+
+                                    }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Firma Adı</th>
+                                        <th>Firma Telefon</th>
+                                        <th>Firma Web Site</th>
+                                        <th>Firma Adres</th>
+                                        <th>Firma Mail</th>
+                                        <th>Kayıt Acan </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="FirmaEkleEkran">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Yeni Firma Kayıt</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(false)
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="card-primary">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Firma Bilgileri</h3>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Firma Adı:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("FirmaAdi", "", new { @class = "form-control", placeholder = "Firma Adı" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Firma Telefon:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("FirmaTelefon", "", new { @class = "form-control", placeholder = "Firma Telefon" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Firma Web Site:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("FirmaWebsite", "", new { @class = "form-control", placeholder = "Firma Web Site" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Firma Mail:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("FirmaMail", "", new { @class = "form-control", placeholder = "Firma Mail" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Firma Adres:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextArea("FirmaAdres", "", new { @class = "form-control", placeholder = "Firma Adres", rows = "7" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card-success">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Firma Yetkili</h3>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Adı:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("Adi", "", new { @class = "form-control", placeholder = "Adı" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Soyadı:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("Soyadi", "", new { @class = "form-control", placeholder = "Soyadı" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Ünvan:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("Unvan", "", new { @class = "form-control", placeholder = "Ünvan" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Telefon:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("Telefon", "", new { @class = "form-control", placeholder = "Telefon" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Mail:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.TextBox("Mail", "", new { @class = "form-control", placeholder = "Mail" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Firma Acıklama</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="form-group row">
+                                                <label class="col-sm-12 col-form-label">Acıklama:</label>
+                                                <div class="col-sm-12">
+                                                    @Html.TextArea("Aciklama", "", new { @class = "form-control", placeholder = "Acıklama", rows = "3" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group row">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-12 col-form-label">Durum:</label>
+                                                    <div class="col-sm-12">
+                                                        @Html.DropDownList("Durum", new SelectList(ViewBag.AciklamaDurum, "Value", "Text"), "Durum Seciniz", new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">İptal</button>
+                                <button type="submit" class="btn btn-primary">Kaydet</button>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Yeni Acıklama Ekle-->
+            @{
+                if (TempData["FirmaID"] != "0")
+                {
+                    <!-- DETAY -->
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Detay</h3>
+                                    @{
+                                        if (TempData["FirmaID"] != null)
+                                        {
+                                            <button type="button" class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#AciklamaEkleEkran">Yeni Acıklama</button>
+                                        }
+                                        if (TempData["AciklamaBilgi"] != null)
+                                        {
+                                            <div class="alert alert-default-info alert-dismissible">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                @TempData["AciklamaBilgi"]
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <ul class="products-list product-list-in-card">
+
+                                        @{
+                                            if (ListAciklama != null)
+                                            {
+                                                ListAciklama.Reverse();
+
+                                                foreach (FirmaAciklama item in ListAciklama)
+                                                {
+                                                    <li class="item">
+                                                        <div class="product">
+                                                            <a href="#" class="product-title">
+                                                                @(item.KayitAcan)
+                                                                <span class="badge badge-warning float-right">@item.KayitTarih</span>
+                                                            </a>
+                                                            <span class="product-description" title="@item.Aciklama">
+                                                                @("Acıklama:"+item.Aciklama)
+                                                            </span>
+                                                            <span class="product-description">
+                                                                @("Yetkili:")
+                                                                @foreach (FirmaYetkili item2 in ListYetkili)
+                                                                {
+                                                                    if (item.Yetkili == item2.ID)
+                                                                    {
+                                                                        @(item2.Adi+" "+item2.Soyadi)
+                                                                        break;
+                                                                    }
+                                                                }
+                                                            </span>
+                                                            <span class="product-description" title="@item.Aciklama">
+                                                                @("Durum:"+item.Durum)
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            }
+                                        }
+                                    </ul>
+                                    <div class="col-12">
+
+
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Firma Yetkili</h3>
+                                    @{
+                                        if (TempData["FirmaID"] != null)
+                                        {
+                                            <button type="button" class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#YeniKisiEkleEkran">Yeni Yetkili Ekle</button>
+                                        }
+
+
+                                        if (TempData["YetkiliBilgi"] != null)
+                                        {
+                                            <div class="alert alert-default-info alert-dismissible">
+                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                @TempData["YetkiliBilgi"]
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+                                <div class="card-body">
+                                    @{
+                                        if (ListYetkili != null)
+                                        {
+                                            ListYetkili.Reverse();
+                                            foreach (FirmaYetkili item in ListYetkili)
+                                            {
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="user-block">
+                                                            <img class="img-circle img-bordered-sm" src="~/SiteDosyalar/img/avatar5.png" alt="user image">
+                                                            <span class="username">
+                                                                <a>@(item.Adi+" "+item.Soyadi+" ("+item.Unvan+")")</a>
+                                                            </span>
+                                                            <span class="description">@(item.Telefon+" | "+ item.Mail)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            }
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="AciklamaEkleEkran">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Yeni Acıklama</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                @using (Html.BeginForm("Aciklama", "Home", FormMethod.Post, "test"))
+                                {
+                                    @Html.ValidationSummary(false)
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-12 col-form-label">Acıklama:</label>
+                                                    <div class="col-sm-12">
+                                                        @Html.TextArea("Aciklama", "", new { @class = "form-control", placeholder = "Acıklama", rows = "10" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Yrtkili:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.DropDownList("Yetkili", new SelectList(ViewBag.YetkiliCombo, "Value", "Text"), "Yetkili Seciniz", new { @class = "form-control" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-12 col-form-label">Durum:</label>
+                                                        <div class="col-sm-12">
+                                                            @Html.DropDownList("Durum", new SelectList(ViewBag.AciklamaDurum, "Value", "Text"), "Durum Seciniz", new { @class = "form-control" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">İptal</button>
+                                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                                    </div>
+                                }
+
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+
+                    <div class="modal fade" id="YeniKisiEkleEkran">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Yetkili Ekle</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
+                                </div>
+                                @using (Html.BeginForm("YetkiliEkle", "Home", FormMethod.Post))
+                                {
+                                    @Html.ValidationSummary(false)
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-12 col-form-label">Adı:</label>
+                                                    <div class="col-sm-12">
+                                                        @Html.TextBox("Adi", "", new { @class = "form-control", placeholder = "Adı" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-12 col-form-label">Soyadı:</label>
+                                                    <div class="col-sm-12">
+                                                        @Html.TextBox("Soyadi", "", new { @class = "form-control", placeholder = "Soyadı" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-12 col-form-label">Ünvan:</label>
+                                                    <div class="col-sm-12">
+                                                        @Html.TextBox("Unvan", "", new { @class = "form-control", placeholder = "Ünvan" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-12 col-form-label">Telefon:</label>
+                                                    <div class="col-sm-12">
+                                                        @Html.TextBox("Telefon", "", new { @class = "form-control", placeholder = "Telefon" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-12 col-form-label">Mail:</label>
+                                                    <div class="col-sm-12">
+                                                        @Html.TextBox("Mail", "", new { @class = "form-control", placeholder = "Mail" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">İptal</button>
+                                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                                    </div>
+                                }
+
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                }
+            }
+
+
+        </section>
+    </div>
+    <footer class="main-footer">
+        <strong>Copyright &copy; @DateTime.Now.Year <a href="#">Smarttek Bilişim</a>.</strong>
+
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1
+        </div>
+    </footer>
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+</div>
+

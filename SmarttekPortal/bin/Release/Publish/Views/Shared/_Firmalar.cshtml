@@ -1,0 +1,65 @@
+﻿@using Busines
+@using Entities
+@{
+    Manager Tm = new Manager();
+    List<Firma> list = Tm.GetFirmalar();
+}
+    <div class="card shadow ">
+        <div class="card-header ">
+            <h6 class="m-0 font-weight-bold text-primary">Firmalar</h6>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Firma Adı</th>
+                        <th>İlgili Kişi</th>
+                        <th>Şimdiki Durum</th>
+                        <th>Maliyet Tutarı</th>
+                        <th>Net Teklif Tutarı</th>
+                        <th>Satış Adım</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Firma Adı</th>
+                        <th>İlgili Kişi</th>
+                        <th>Şimdiki Durum</th>
+                        <th>Maliyet Tutarı</th>
+                        <th>Net Teklif Tutarı</th>
+                        <th>Satış Adım</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (Firma cat in list)
+                    {
+                        <tr>
+                            <td>@cat.ID</td>
+                            <td>@cat.FirmaAdi</td>
+                            <td>@(cat.KayitAcan + " ")</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!-- Bootstrap core JavaScript-->
+<script src="~/Content/vendor/jquery/jquery.min.js"></script>
+<script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<!-- Page level plugins -->
+<script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="~/Scripts/demo/datatables-demo.js"></script>

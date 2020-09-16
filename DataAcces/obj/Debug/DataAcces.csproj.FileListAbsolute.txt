@@ -49,3 +49,20 @@ H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\DataAcces\obj\Debug\DataA
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.pdb
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.Migrations.dneme.resources
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.csproj.GenerateResource.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\DataAcces.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\DataAcces.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\DataAcces.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\Entities.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\EntityFramework.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\EntityFramework.SqlServer.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\Entities.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\Entities.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\EntityFramework.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Debug\EntityFramework.SqlServer.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.csprojAssemblyReference.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.Migrations.dneme.resources
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.csproj.GenerateResource.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.csproj.CoreCompileInputs.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.csproj.CopyComplete
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Debug\DataAcces.pdb

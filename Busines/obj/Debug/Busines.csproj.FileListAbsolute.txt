@@ -52,3 +52,21 @@ H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Busines\obj\Debug\Busines
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Busines\obj\Debug\Busines.csproj.CopyComplete
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Busines\obj\Debug\Busines.dll
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Busines\obj\Debug\Busines.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\Busines.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\Busines.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\Busines.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\DataAcces.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\Entities.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\EntityFramework.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\EntityFramework.SqlServer.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\DataAcces.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\DataAcces.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\Entities.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\Entities.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\EntityFramework.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\bin\Debug\EntityFramework.SqlServer.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\obj\Debug\Busines.csprojAssemblyReference.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\obj\Debug\Busines.csproj.CoreCompileInputs.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\obj\Debug\Busines.csproj.CopyComplete
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\obj\Debug\Busines.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Busines\obj\Debug\Busines.pdb

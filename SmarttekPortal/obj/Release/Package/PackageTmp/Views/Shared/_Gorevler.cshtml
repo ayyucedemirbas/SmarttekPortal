@@ -1,0 +1,117 @@
+﻿@using Busines
+@using Entities
+@{
+    Manager Tm = new Manager();
+    List<Gorevler> list = Tm._GetGorevler();
+}
+
+
+@{
+    ViewBag.Title = "Gorevler";
+}
+
+
+
+<!-- DataTales Example -->
+<div class="card shadow ">
+    <div class="card-header ">
+        <h6 class="m-0 font-weight-bold text-primary">Temaslar</h6>
+    </div>
+    <div class="card-body">
+        <!--  <a class="btn btn-success text-light float-right">
+            Temas Ekle
+
+
+        </a>-->
+
+
+        <button type="button" class="btn btn btn-success btn-lg float-right" data-toggle="modal" data-target="#GorevEkle">
+            Gorev Ekle
+        </button>
+
+        <div class="modal fade" id="GorevEkle" tabindex="-1" role="dialog" aria-labelledby="">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Gorev Ekle</h4>
+                    </div>
+                    <form method="post" action="/home/IndexGorev">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>
+                                    Durum
+                                    <input type="text" name="durum" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Konu</label>
+                                <input type="text" name="gorev_konu" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Yetkili</label>
+                                <input type="text" name="gorev_yetkili" class="form-control" />
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                            <button type="submit" class="btn btn-primary">Gorev Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <br />
+        <br />
+
+
+
+
+        <table class="table table-bordered" id="dataTable" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Firma Adı</th>
+                    <th>Konu</th>
+                    <th>Şimdiki Durum</th>
+                    <th>Sipariş Numara</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Durum</th>
+                    <th>Konu</th>
+                    <th>Yetkili</th>
+                    
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (Gorevler cat in list)
+                {
+                    <tr onclick="document.location='@Url.Action("Gorevler","Home",new { id=cat.ID })'">
+                        <td>@cat.ID</td>
+                        <td>@cat.durum</td>
+                        <td>@cat.gorev_konu</td>
+                        <td>@cat.gorev_yetkili</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="~/Content/vendor/jquery/jquery.min.js"></script>
+<script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<!-- Page level plugins -->
+<script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="~/Scripts/demo/datatables-demo.js"></script>

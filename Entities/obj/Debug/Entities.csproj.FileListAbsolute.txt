@@ -34,3 +34,15 @@ H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Entities\obj\Debug\Entiti
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Entities\obj\Debug\Entities.csproj.CopyComplete
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Entities\obj\Debug\Entities.dll
 H:\SmarttekPortal\smatttek portal _yeni\SmarttekPortal\Entities\obj\Debug\Entities.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\bin\Debug\Entities.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\bin\Debug\Entities.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\bin\Debug\Entities.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\bin\Debug\EntityFramework.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\bin\Debug\EntityFramework.SqlServer.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\bin\Debug\EntityFramework.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\bin\Debug\EntityFramework.SqlServer.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\obj\Debug\Entities.csproj.CopyComplete
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\obj\Debug\Entities.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\Entities\obj\Debug\Entities.pdb

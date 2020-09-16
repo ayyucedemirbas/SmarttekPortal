@@ -66,6 +66,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Temas.cs" />
     <Compile Include="Temaslar.cs" />
+    <Compile Include="Urun.cs" />
+    <Compile Include="Urunler.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

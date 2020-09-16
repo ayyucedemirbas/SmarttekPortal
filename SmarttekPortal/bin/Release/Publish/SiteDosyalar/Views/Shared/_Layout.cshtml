@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Smarttek Bilişim</title>
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/SiteDosyalar/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/SiteDosyalar/plugins/summernote/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/SiteDosyalar/css/indexTable.css" rel="stylesheet" />
+
+
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+
+    @RenderBody()
+
+
+    <!-- jQuery -->
+    <script src="~/SiteDosyalar/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/SiteDosyalar/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables -->
+    <!-- AdminLTE App -->
+    <script src="~/SiteDosyalar/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/SiteDosyalar/js/demo.js"></script>
+    <script src="~/SiteDosyalar/js/table/table1.js"></script>
+    <script src="~/SiteDosyalar/js/table/table2.js"></script>
+    <!-- page script -->
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "columns": [
+                    { "data": "name" },
+                    { "data": "position" },
+                    { "data": "office" },
+                    { "data": "age" },
+                    { "data": "age1" },
+                    { "data": "start_date" }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

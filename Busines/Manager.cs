@@ -12,20 +12,22 @@ namespace Busines
 {
     public class Manager
     {
-        Repository<User> repo_User = new Repository<User>();
-        Repository<Firma> repo_Firma = new Repository<Firma>();
-        Repository<Temas> repo_Temas = new Repository<Temas>();
-        Repository<Personel> repo_Personel = new Repository<Personel>();
-        Repository<Izin> repo_Izin = new Repository<Izin>();
+        private Repository<User> repo_User = new Repository<User>();
+        private Repository<Firma> repo_Firma = new Repository<Firma>();
+        private Repository<Temas> repo_Temas = new Repository<Temas>();
+        private Repository<Personel> repo_Personel = new Repository<Personel>();
+        private Repository<Izin> repo_Izin = new Repository<Izin>();
+        private Repository<Urun> repo_Urun = new Repository<Urun>();
 
-        Repository<FirmaAciklama> repo_FirmaAciklama = new Repository<FirmaAciklama>();
+        private Repository<FirmaAciklama> repo_FirmaAciklama = new Repository<FirmaAciklama>();
 
 
-        Repository<FirmaYetkili> repo_FirmaYetkili = new Repository<FirmaYetkili>();
+        private Repository<FirmaYetkili> repo_FirmaYetkili = new Repository<FirmaYetkili>();
         private Repository<Temaslar> repo_category = new Repository<Temaslar>();
         private Repository<Gorevler> repo_gorev = new Repository<Gorevler>();
-        Repository<Personeller> repo_personel = new Repository<Personeller>();
-        Repository<Izinler> repo_izin = new Repository<Izinler>();
+        private Repository<Personeller> repo_personel = new Repository<Personeller>();
+        private Repository<Izinler> repo_izin = new Repository<Izinler>();
+        private Repository<Urunler> repo_urun = new Repository<Urunler>();
 
         public List<Temaslar> GetCategories()
         {
@@ -49,6 +51,11 @@ namespace Busines
         public List<Izinler> GetIzinler()
         {
             return repo_izin.List();
+        }
+
+        public List<Urunler> GetUrunler()
+        {
+            return repo_urun.List();
         }
 
         public BusinesLayerResult<User> Login(string mail, string sifre)
@@ -87,6 +94,8 @@ namespace Busines
 
         }
 
+
+
         public int izinOlustur(Izin data)
         {
 
@@ -97,6 +106,15 @@ namespace Busines
 
         }
 
+        public int urunEkle(Urun data)
+        {
+
+
+            return repo_Urun.Insert(data);
+
+
+
+        }
 
 
         public int temasEkle(Temaslar data)
@@ -176,6 +194,10 @@ namespace Busines
         public List<Personel> PersonelList()
         {
             return repo_Personel.List();
+        }
+        public List<Urun> UrunList()
+        {
+            return repo_Urun.List();
         }
         public List<FirmaAciklama> firmaAciklamaList(Int64 firmaID)
         {

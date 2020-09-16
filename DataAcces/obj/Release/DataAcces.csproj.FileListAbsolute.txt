@@ -1,0 +1,17 @@
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\DataAcces.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\DataAcces.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\DataAcces.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\Entities.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\EntityFramework.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\EntityFramework.SqlServer.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\Entities.pdb
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\Entities.dll.config
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\EntityFramework.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\bin\Release\EntityFramework.SqlServer.xml
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Release\DataAcces.csprojAssemblyReference.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Release\DataAcces.Migrations.dneme.resources
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Release\DataAcces.csproj.GenerateResource.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Release\DataAcces.csproj.CoreCompileInputs.cache
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Release\DataAcces.csproj.CopyComplete
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Release\DataAcces.dll
+H:\SmarttekPortal\smatttek_portal_yeni\SmarttekPortal\DataAcces\obj\Release\DataAcces.pdb

@@ -13,7 +13,7 @@ namespace SmarttekPortal.Controllers
 
         //Temaslar tms = new Temaslar();
 
-        public ActionResult Temaslar() //giris kontrolu sagla
+        public ActionResult Temaslar()
         {
             if (giris())
             {
@@ -40,6 +40,15 @@ namespace SmarttekPortal.Controllers
         }
 
         public ActionResult Izinler()
+        {
+            if (giris())
+            {
+                return View();
+            }
+            return null;
+        }
+
+        public ActionResult Urunler()
         {
             if (giris())
             {
@@ -274,7 +283,7 @@ namespace SmarttekPortal.Controllers
                 Manager mng = new Manager();
                 if (g != null)
                 {
-                    AciklamaDurum();
+                    
                     int ekle = mng.gorevEkle(g);
                     if (ekle > 0)
                     {
@@ -306,7 +315,7 @@ namespace SmarttekPortal.Controllers
                 Manager mng = new Manager();
                 if (p != null)
                 {
-                    AciklamaDurum();
+                    
                     int ekle = mng.personelEkle(p);
                     if (ekle > 0)
                     {
@@ -318,13 +327,15 @@ namespace SmarttekPortal.Controllers
                     }
                 }
                 ViewBag.addError = hataMesaj;
-                return RedirectToAction("Personel");
+                return RedirectToAction("Personeller");
             }
             else
             {
                 return RedirectToAction("Index", "Giris");
             }
         }
+
+
 
         [HttpPost]
         public ActionResult IndexIzin(Izin i)
@@ -337,7 +348,7 @@ namespace SmarttekPortal.Controllers
                 Manager mng = new Manager();
                 if (i != null)
                 {
-                    AciklamaDurum();
+                   
                     int ekle = mng.izinOlustur(i);
                     if (ekle > 0)
                     {
@@ -349,7 +360,39 @@ namespace SmarttekPortal.Controllers
                     }
                 }
                 ViewBag.addError = hataMesaj;
-                return RedirectToAction("Izin");
+                return RedirectToAction("Izinler");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Giris");
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult IndexUrun(Urun i)
+        {
+            string hataMesaj = "";
+            if (giris())
+            {
+
+
+                Manager mng = new Manager();
+                if (i != null)
+                {
+                   
+                    int ekle = mng.urunEkle(i);
+                    if (ekle > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        hataMesaj += "Urun ekleme başarısız <br>";
+                    }
+                }
+                ViewBag.addError = hataMesaj;
+                return RedirectToAction("Urunler");
             }
             else
             {

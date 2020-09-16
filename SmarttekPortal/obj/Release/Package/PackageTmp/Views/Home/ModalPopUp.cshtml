@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Satyaprakash Bootstrap PopUp";
+}
+
+<title>@ViewBag.Title</title>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button1 {
+        border-radius: 2px;
+    }
+
+    .button2 {
+        border-radius: 4px;
+    }
+
+    .button3 {
+        border-radius: 8px;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+
+    .button5 {
+        border-radius: 50%;
+    }
+</style>
+<div>
+    <h2 style="background-color: Yellow;color: Blue; text-align: center; font-style: oblique">Satyaprakash Bootstrap PopUp</h2>
+    <fieldset>
+        <legend style="color:orangered">Click On Satyaprakash Bootstrap PopUp</legend>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <button id="btnShowModal" type="button"
+                            class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                        Satya Modals
+                    </button>
+
+                    <div class="modal fade" tabindex="-1" id="loginModal"
+                         data-keyboard="false" data-backdrop="static">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        ×
+                                    </button>
+                                    <h4 class="modal-title">Satya Login</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <input class="form-control" type="text"
+                                                   placeholder="Login Username" id="inputUserName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Login Password"
+                                                   type="password" id="inputPassword" />
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary button button4">Sign</button>
+                                    <button type="button" id="btnHideModal" class="btn btn-primary button button4">
+                                        Hide
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<footer>
+    <p style="background-color: Yellow; font-weight: bold; color:blue; text-align: center; font-style: oblique">
+        ©
+        <script>document.write(new Date().toDateString());</script>
+    </p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+</script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#btnShowModal").click(function () {
+                $("#loginModal").modal('show');
+            });
+
+            $("#btnHideModal").click(function () {
+                $("#loginModal").modal('hide');
+            });
+        });
+</script> 

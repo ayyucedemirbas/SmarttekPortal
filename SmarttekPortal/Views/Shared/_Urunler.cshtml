@@ -1,0 +1,135 @@
+﻿@using Busines
+@using Entities
+@{
+    Manager Tm = new Manager();
+    List<Urunler> list = Tm.GetUrunler();
+}
+<!-- DataTales Example -->
+<div class="card shadow ">
+    <div class="card-header ">
+        <h6 class="m-0 font-weight-bold text-primary">Satilan_Urunler</h6>
+    </div>
+    <div class="card-body">
+        <!--  <a class="btn btn-success text-light float-right">
+            Temas Ekle
+
+
+        </a>-->
+
+
+        <button type="button" class="btn btn btn-success btn-lg float-right" data-toggle="modal" data-target="#UrunEkle">
+            Ürün Ekle
+        </button>
+
+        <div class="modal fade" id="UrunEkle" tabindex="-1" role="dialog" aria-labelledby="">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Ürün Ekle</h4>
+                    </div>
+                    <form method="post" action="/home/IndexUrun">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>
+                                    Firma Adı
+                                </label>
+                                <input type="text" name="FirmaAdi" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Firma Adres</label>
+                                <input type="text" name="FirmaAdres" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Vergi Dairesi</label>
+                                <input type="text" name="VergiDairesi" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Vergi Numarası</label>
+                                <input type="text" name="VergiNumarasi" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Tarih</label>
+                                <input type="text" name="Tarih" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Saat</label>
+                                <input type="text" name="Saat" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Kur</label>
+                                <input type="text" name="Kur" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                            <button type="submit" class="btn btn-primary">Ürün Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <br />
+        <br />
+
+
+
+
+        <table class="table table-bordered" id="dataTable" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Firma Adı</th>
+                    <th>Firma Adres</th>
+                    <th>Vergi Dairesi</th>
+                    <th>Vergi Numarası</th>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>Kur</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Firma Adı</th>
+                    <th>Firma Adres</th>
+                    <th>Vergi Dairesi</th>
+                    <th>Vergi Numarası</th>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>Kur</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (Urunler cat in list)
+                {
+                <tr onclick="document.location='@Url.Action("Urunler","Home",new { id=cat.ID })'">
+                    <td>@cat.ID</td>
+                    <td>@cat.FirmaAdi</td>
+                    <td>@cat.FirmaAdres</td>
+                    <td>@cat.VergiDairesi</td>
+                    <td>@cat.VergiNumarasi</td>
+                    <td>@cat.Tarih</td>
+                    <td>@cat.Saat</td>
+                    <td>@cat.Kur</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="~/Content/vendor/jquery/jquery.min.js"></script>
+<script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<!-- Page level plugins -->
+<script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="~/Scripts/demo/datatables-demo.js"></script>
+
