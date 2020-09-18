@@ -17,6 +17,7 @@ namespace DataAcces.EntityFramework
         public DbSet<Personeller> Personel { get; set; }
         public DbSet<Izinler> Izin { get; set; }
         public DbSet<Urunler> Urun { get; set; }
+        public DbSet<Stoklar> Stok { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Firma> Firma { get; set; }
         public DbSet<FirmaAciklama> FirmaAciklama { get; set; }

@@ -57,6 +57,15 @@ namespace SmarttekPortal.Controllers
             return null;
         }
 
+        public ActionResult Stoklar()
+        {
+            if (giris())
+            {
+                return View();
+            }
+            return null;
+        }
+
 
         /* public string Temaslar()
          {
@@ -393,6 +402,37 @@ namespace SmarttekPortal.Controllers
                 }
                 ViewBag.addError = hataMesaj;
                 return RedirectToAction("Urunler");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Giris");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult IndexStok(Stok i)
+        {
+            string hataMesaj = "";
+            if (giris())
+            {
+
+
+                Manager mng = new Manager();
+                if (i != null)
+                {
+
+                    int ekle = mng.stokEkle(i);
+                    if (ekle > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        hataMesaj += "Urun ekleme başarısız <br>";
+                    }
+                }
+                ViewBag.addError = hataMesaj;
+                return RedirectToAction("Stoklar");
             }
             else
             {

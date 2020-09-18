@@ -3712,6 +3712,8 @@
     <Content Include="Views\Shared\_Izinler.cshtml" />
     <Content Include="Views\Home\Urunler.cshtml" />
     <Content Include="Views\Shared\_Urunler.cshtml" />
+    <Content Include="Views\Home\Stoklar.cshtml" />
+    <Content Include="Views\Shared\_Stoklar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

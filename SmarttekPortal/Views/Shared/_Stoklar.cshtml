@@ -1,0 +1,63 @@
+﻿@using Busines
+@using Entities
+@{
+    Manager Tm = new Manager();
+    List<Stoklar> list = Tm.GetStok();
+}
+<!-- DataTales Example -->
+<div class="card shadow ">
+    <div class="card-header ">
+        <h6 class="m-0 font-weight-bold text-primary">Stok</h6>
+    </div>
+    <div class="card-body">
+        <!--  <a class="btn btn-success text-light float-right">
+            Temas Ekle
+
+
+        </a>-->
+
+
+
+        <table class="table table-bordered" id="dataTable" cellspacing="0">
+            <thead>
+                <tr>
+                   
+                    <th>Ürün Adı</th>
+                    <th>Satılan Miktar</th>
+
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    
+                    <th>Ürün Adı</th>
+                    <th>Satılan Miktar</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (Stoklar cat in list)
+                {
+                    <tr onclick="document.location='@Url.Action("Urunler","Home",new {  })'">
+                        
+                        <td>@cat.urunAdi</td>
+                        <td>@cat.satilanMiktar</td>
+                        <
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="~/Content/vendor/jquery/jquery.min.js"></script>
+<script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<!-- Page level plugins -->
+<script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="~/Scripts/demo/datatables-demo.js"></script>
+

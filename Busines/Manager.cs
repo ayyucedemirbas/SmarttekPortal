@@ -18,6 +18,7 @@ namespace Busines
         private Repository<Personel> repo_Personel = new Repository<Personel>();
         private Repository<Izin> repo_Izin = new Repository<Izin>();
         private Repository<Urun> repo_Urun = new Repository<Urun>();
+        private Repository<Stok> repo_Stok = new Repository<Stok>();
 
         private Repository<FirmaAciklama> repo_FirmaAciklama = new Repository<FirmaAciklama>();
 
@@ -28,6 +29,7 @@ namespace Busines
         private Repository<Personeller> repo_personel = new Repository<Personeller>();
         private Repository<Izinler> repo_izin = new Repository<Izinler>();
         private Repository<Urunler> repo_urun = new Repository<Urunler>();
+        private Repository<Stoklar> repo_stok = new Repository<Stoklar>();
 
         public List<Temaslar> GetCategories()
         {
@@ -56,6 +58,11 @@ namespace Busines
         public List<Urunler> GetUrunler()
         {
             return repo_urun.List();
+        }
+
+        public List<Stoklar> GetStok()
+        {
+            return repo_stok.List();
         }
 
         public BusinesLayerResult<User> Login(string mail, string sifre)
@@ -111,6 +118,15 @@ namespace Busines
 
 
             return repo_Urun.Insert(data);
+
+
+
+        }
+        public int stokEkle(Stok data)
+        {
+
+
+            return repo_Stok.Insert(data);
 
 
 
@@ -199,6 +215,15 @@ namespace Busines
         {
             return repo_Urun.List();
         }
+
+        public List<Stok> StokList()
+        {
+            return repo_Stok.List();
+        }
+
+
+
+
         public List<FirmaAciklama> firmaAciklamaList(Int64 firmaID)
         {
             return repo_FirmaAciklama.List(x => x.firmaID == firmaID);
