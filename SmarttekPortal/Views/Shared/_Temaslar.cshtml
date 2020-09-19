@@ -86,6 +86,8 @@
                         <tbody>
                             @foreach (Temaslar cat in list)
                             {
+
+
                                 <tr onclick="document.location='@Url.Action("Temaslar","Home",new { id=cat.ID })'">
                                     <td>@cat.ID</td>
                                     <td>@cat.firma_adi</td>
@@ -93,6 +95,29 @@
                                     <td>@cat.simdiki_durum</td>
                                     <td>@cat.siparis_numara</td>
                                 </tr>
+                                <button type="button" class="btn" data-toggle="modal" data-target="#get"></button>
+                                <div class="modal fade" id="get" tabindex="-1" role="dialog" aria-labelledby="">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                <h4 class="modal-title" id="myModalLabel"></h4>
+                                            </div>
+                                            <form method="post" action="/home/IndexTemas">
+                                                <div class="modal-body">
+                                                   
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                                    
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
                             }
                         </tbody>
                     </table>
